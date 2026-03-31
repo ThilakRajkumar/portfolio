@@ -737,6 +737,7 @@ footer {
         <div class="project-sub">BLUE TEAM SECURITY LAB // ACTIVE</div>
         <div class="mitre-badge">⬤ MITRE ATT&CK T1595.002 // T1046 CONFIRMED</div>
         <div class="project-desc">Enterprise-grade virtual Security Operations Center built from scratch. Designed to simulate real-world attack scenarios, validate detection pipelines end-to-end, and practice L1 SOC analyst workflows without touching production infrastructure.</div>
+          
         <ul class="project-bullets">
           <li>Segmented network with pfSense firewall — 4 isolated VLANs: <span>SOC / DMZ / Internal / Attacker</span> with zero-trust inter-VLAN rules</li>
           <li>Deployed <span>Suricata IDS/IPS</span> with Emerging Threats ruleset on WAN + LAN; EVE JSON alert logging</li>
@@ -744,12 +745,23 @@ footer {
           <li>Simulated Nmap reconnaissance from <span>Kali Linux</span>; confirmed real-time detection → validated in Wazuh dashboard</li>
           <li>Full alert triage pipeline: trigger → detect → analyze → MITRE map → document</li>
         </ul>
+
+        <div class="lab-metrics">
+          <span>6 Virtual Machines</span>  |
+          <span>4 Network VLANs</span>  |
+          <span>IDS + SIEM Pipeline</span>   |
+          <span>Real-time Alert Detection</span>
+        </div>
+
+
         <div class="tag-row">
+          <strong>Lab Architecture:</strong><br> <span class="tag">SOC Server (Wazuh)</span>
           <span class="tag">pfSense</span><span class="tag">Suricata</span><span class="tag">Wazuh SIEM</span>
           <span class="tag">Kali Linux</span><span class="tag violet">MITRE ATT&CK</span>
           <span class="tag">VMware</span><span class="tag violet">Blue Team</span>
         </div>
       </div>
+
 
       <div class="project-card fade-in">
         <div class="project-num">PROJECT_02</div>
