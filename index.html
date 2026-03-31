@@ -412,6 +412,7 @@ section { padding: 100px 48px; position:relative; }
 }
 
 /* ═══ PROJECTS ═══ */
+
 #projects { background: linear-gradient(180deg, var(--deep) 0%, var(--black) 100%); }
 
 .projects-grid { display:grid; gap:24px; }
@@ -424,6 +425,27 @@ section { padding: 100px 48px; position:relative; }
   transition:all 0.4s;
   cursor: none;
 }
+
+.project-arch{
+margin-top:8px;
+font-size:13px;
+color:#8fd3ff;
+}
+
+.lab-metrics{
+margin-top:10px;
+font-size:12px;
+color:#aaa;
+}
+
+.project-link{
+display:inline-block;
+margin-top:12px;
+font-size:13px;
+color:#9b8cff;
+text-decoration:none;
+}
+
 .project-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
   background: linear-gradient(90deg, transparent, var(--blue), var(--violet-glow), transparent);
@@ -480,82 +502,37 @@ section { padding: 100px 48px; position:relative; }
   color:var(--green); margin-top:8px; margin-bottom:16px;
 }
 
-<!-- ═══ CERTS ═══ -->
-<section id="certs">
-  <div class="section-wrap">
-    <div class="section-label">04 // CREDENTIALS</div>
-    <h2 class="section-title">CERTIFI<span>CATIONS</span></h2>
-    <div class="certs-grid">
-      <div class="cert-card fade-in">
-        <div class="cert-icon blue">
-          <svg width="26" height="26" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.96 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-          </svg>
-        </div>
-        <div class="cert-body">
-          <div class="cert-name">Google Cybersecurity Professional Certificate</div>
-          <div class="cert-issuer">GOOGLE // COURSERA</div>
-          <span class="cert-status done">✓ COMPLETED</span>
-        </div>
-      </div>
-      <div class="cert-card fade-in">
-        <div class="cert-icon violet">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
-              alt="IBM Logo"
-              style="width:34px;height:auto;">
-        </div>
+/* ═══ CERTS ═══ */
+#certs { background: var(--black); }
 
-        <div class="cert-body">
-          <div class="cert-name">Hands-on Linux Commands & Shell Scripting</div>
-          <div class="cert-issuer">IBM // COURSERA</div>
-          <span class="cert-status done">✓ COMPLETED</span>
-        </div>
-      </div>
-      <div class="cert-card fade-in">
-        <div class="cert-icon orange">
-          <img src="logos/comptia.svg" alt="CompTIA Logo" style="width:34px;height:auto;">
-       </div>
+.certs-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
 
-  <div class="cert-body">
-    <div class="cert-name">CompTIA Security+</div>
-    <div class="cert-issuer">COMPTIA</div>
-    <span class="cert-status wip">⟳ IN PROGRESS — 2026</span>
-  </div>
-</div>
-            <div class="cert-card fade-in">
-        <div class="cert-icon green">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png"
-              alt="HackerRank Logo"
-              style="width:28px;height:auto;">
-        </div>
+.cert-card {
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:10px; padding:24px;
+  display:flex; align-items:flex-start; gap:16px;
+  transition: all 0.3s; position:relative; overflow:hidden;
+}
+.cert-card:hover { border-color:rgba(123,47,255,0.3); transform:translateY(-3px); }
+.cert-icon {
+  width:44px; height:44px; border-radius:8px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px;
+}
+.cert-icon.blue { background:rgba(0,212,255,0.1); border:1px solid rgba(0,212,255,0.2); }
+.cert-icon.violet { background:rgba(123,47,255,0.1); border:1px solid rgba(123,47,255,0.2); }
+.cert-icon.green { background:rgba(0,255,136,0.1); border:1px solid rgba(0,255,136,0.2); }
+.cert-icon.orange { background:rgba(255,150,0,0.1); border:1px solid rgba(255,150,0,0.2); }
+.cert-body { flex:1; }
+.cert-name { font-weight:700; font-size:14px; color:var(--white); margin-bottom:4px; line-height:1.3; }
+.cert-issuer { font-family:var(--font-mono); font-size:10px; color:var(--text-dim); letter-spacing:1px; }
+.cert-status {
+  font-family:var(--font-mono); font-size:9px; letter-spacing:1px;
+  padding:2px 8px; border-radius:2px; display:inline-block; margin-top:8px;
+}
+.cert-status.done { background:rgba(0,255,136,0.1); color:var(--green); border:1px solid rgba(0,255,136,0.2); }
+.cert-status.wip { background:rgba(255,150,0,0.1); color:#ffaa00; border:1px solid rgba(255,150,0,0.2); }
 
-        <div class="cert-body">
-          <div class="cert-name">SQL Basic Certificate</div>
-          <div class="cert-issuer">HACKERRANK</div>
-          <span class="cert-status done">✓ COMPLETED</span>
-        </div>
-      </div>
-      
-      <div class="cert-card fade-in">
-  <div class="cert-icon blue">
-    <img src="https://letsdefend.io/images/logo.png"
-         alt="LetsDefend Logo"
-         style="width:32px;height:auto;">
-  </div>
-
-  <div class="cert-body">
-    <div class="cert-name">SOC Analyst Learning Path</div>
-    <div class="cert-issuer">LETSDEFEND</div>
-    <span class="cert-status wip">⟳ IN PROGRESS — 2026</span>
-  </div>
-</div>
-
-    </div>
-  </div>
-</section>
 /* ═══ CONTACT ═══ */
 #contact { background: linear-gradient(180deg, var(--black) 0%, var(--deep) 100%); }
 
@@ -797,6 +774,8 @@ footer {
           <span>IDS + SIEM Pipeline</span>   |
           <span>Real-time Alert Detection</span>
         </div>
+
+
         <div class="tag-row">
           <strong>Lab Architecture:</strong><br> <span class="tag">SOC Server (Wazuh)</span>
           <span class="tag">pfSense</span><span class="tag">Suricata</span><span class="tag">Wazuh SIEM</span>
@@ -804,7 +783,6 @@ footer {
           <span class="tag">VMware</span><span class="tag violet">Blue Team</span>
         </div>
       </div>
-
 
       <div class="project-card fade-in">
         <div class="project-num">PROJECT_02</div>
@@ -879,15 +857,11 @@ footer {
       </div>
       <div class="cert-card fade-in">
         <div class="cert-icon violet">
-          <svg width="34" height="14" viewBox="0 0 56 22" xmlns="http://www.w3.org/2000/svg" fill="#1F70C1">
-            <rect x="0" y="0" width="6" height="3"/><rect x="0" y="5" width="6" height="3"/><rect x="0" y="10" width="6" height="3"/><rect x="0" y="15" width="6" height="3"/><rect x="0" y="19" width="6" height="3"/>
-            <rect x="9" y="0" width="6" height="3"/><rect x="9" y="10" width="6" height="3"/><rect x="9" y="19" width="6" height="3"/>
-            <rect x="18" y="0" width="6" height="3"/><rect x="18" y="5" width="6" height="3"/><rect x="18" y="10" width="6" height="3"/><rect x="18" y="15" width="6" height="3"/><rect x="18" y="19" width="6" height="3"/>
-            <rect x="27" y="0" width="6" height="3"/><rect x="27" y="5" width="6" height="3"/><rect x="27" y="10" width="3" height="3"/><rect x="27" y="15" width="6" height="3"/><rect x="27" y="19" width="6" height="3"/>
-            <rect x="36" y="0" width="6" height="3"/><rect x="36" y="5" width="6" height="3"/><rect x="36" y="10" width="6" height="3"/><rect x="36" y="15" width="6" height="3"/><rect x="36" y="19" width="6" height="3"/>
-            <rect x="45" y="0" width="6" height="3"/><rect x="45" y="10" width="6" height="3"/><rect x="45" y="19" width="6" height="3"/>
-          </svg>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+              alt="IBM Logo"
+              style="width:34px;height:auto;">
         </div>
+
         <div class="cert-body">
           <div class="cert-name">Hands-on Linux Commands & Shell Scripting</div>
           <div class="cert-issuer">IBM // COURSERA</div>
@@ -897,26 +871,40 @@ footer {
       <div class="cert-card fade-in">
         <div class="cert-icon orange">
           <img src="logos/comptia.svg" alt="CompTIA Logo" style="width:34px;height:auto;">
-        </div>
-        <div class="cert-body">
-          <div class="cert-name">CompTIA Security+</div>
-          <div class="cert-issuer">COMPTIA</div>
-          <span class="cert-status wip">⟳ IN PROGRESS — 2026</span>
-        </div>
-      </div>
-      <div class="cert-card fade-in">
+       </div>
+
+  <div class="cert-body">
+    <div class="cert-name">CompTIA Security+</div>
+    <div class="cert-issuer">COMPTIA</div>
+    <span class="cert-status wip">⟳ IN PROGRESS — 2026</span>
+  </div>
+</div>
+            <div class="cert-card fade-in">
         <div class="cert-icon green">
-          <svg width="26" height="26" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="40" rx="6" fill="#2EC866"/>
-            <text x="20" y="28" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="#fff">&lt;/&gt;</text>
-          </svg>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png"
+              alt="HackerRank Logo"
+              style="width:28px;height:auto;">
         </div>
+
         <div class="cert-body">
           <div class="cert-name">SQL Basic Certificate</div>
           <div class="cert-issuer">HACKERRANK</div>
           <span class="cert-status done">✓ COMPLETED</span>
         </div>
       </div>
+      
+      <div class="cert-card fade-in">
+       <div class="cert-icon blue">
+          <img src="logos/letsdefend.png" alt="LetsDefend Logo" style="width:28px;height:auto;">
+      </div>
+
+  <div class="cert-body">
+    <div class="cert-name">SOC Analyst Learning Path</div>
+    <div class="cert-issuer">LETSDEFEND</div>
+    <span class="cert-status wip">⟳ IN PROGRESS — 2026</span>
+  </div>
+</div>
+
     </div>
   </div>
 </section>
